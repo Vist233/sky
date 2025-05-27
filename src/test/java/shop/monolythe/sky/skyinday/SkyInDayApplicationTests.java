@@ -3,8 +3,7 @@ package shop.monolythe.sky.skyinday;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.test.context.ActiveProfiles;
 import shop.monolythe.sky.skyinday.entity.FunctionDef;
 import shop.monolythe.sky.skyinday.repository.FunctionDefRepository;
 
@@ -13,8 +12,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
-@EnableJpaRepositories(basePackageClasses = FunctionDefRepository.class)
-@EntityScan(basePackageClasses = FunctionDef.class)
+@ActiveProfiles("test")
 class SkyInDayApplicationTests {
     @Autowired
     private FunctionDefRepository repo;
